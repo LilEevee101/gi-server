@@ -1,0 +1,24 @@
+{
+  "name": "gi-server",
+  "version": "1.0.0",
+  "description": "genshin impact webservice",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/LilEevee101/gi-server.git"
+  },
+  "keywords": [
+    "genshin",
+    "strategy",
+    "guide"
+  ],
+  "author": "LilEevee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LilEevee101/gi-server/issues"
+  },
+  "homepage": "https://github.com/LilEevee101/gi-server#readme"
+}

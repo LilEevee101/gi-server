@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Albedo",
+        "element": "Geo",
+        "weapon": "Sword"
+    },
+    {
+        "name": "Amber",
+        "element": "Pyro",
+        "weapon": "Bow"
+    },
+    {
+        "name": "Barbara",
+        "element": "Hydro",
+        "weapon": "Catalyst"
+    },
+    {
+        "name": "Beidou",
+        "element": "Electro",
+        "weapon": "Claymore"
+    },
+    {
+        "name": "Bennett",
+        "element": "Pyro",
+        "weapon": "Sword"
+    }
+    
+]
