@@ -6,7 +6,10 @@
         "4pc": "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%.",
         "min-ar": 0,
         "ranking": 0,
-        "desc": ""
+        "desc": "",
+        "tags": [
+            "Main DPS"
+        ]
     },
     {
         "name": "Wanderer's Trope",
@@ -15,7 +18,10 @@
         "4pc": "Increases Charged Attack DMG by 35% if the character uses a Catalyst or Bow.",
         "min-ar": 0,
         "ranking": 0,
-        "desc": ""
+        "desc": "",
+        "tags": [
+            
+        ]
     },
     {
         "name": "Noblesse Oblige",
@@ -24,7 +30,10 @@
         "4pc": "Using an Elemental Burst increases all party members' ATK by 20% for 12s. This effect cannot stack.",
         "min-ar": 0,
         "ranking": 0,
-        "desc": ""
+        "desc": "",
+        "tags": [
+            
+        ]
     },
     {
         "name": "Maiden's Beloved",
@@ -33,6 +42,22 @@
         "4pc": "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s.",
         "min-ar": 0,
         "ranking": 0,
-        "desc": ""
+        "desc": "",
+        "tags": [
+            
+        ]
+    },
+    {
+        "name": "Crimson Witch of Flames",
+        "domain":"Hidden Palace of Zhou Formula",
+        "2pc": "Pyro DMG +15%",
+        "4pc": "Increases Overloaded and Burning DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using an Elemental Skill increases the 2-Piece Set Bonus by 50% of its starting value for 10s. Max 3 stacks.",
+        "min-ar": 30,
+        "ranking": 0,
+        "desc": "",
+        "tags": [
+            "Pyro",
+            "Main DPS"
+        ]
     }
 ]

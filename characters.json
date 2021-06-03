@@ -2,27 +2,32 @@
     {
         "name": "Albedo",
         "element": "Geo",
-        "weapon": "Sword"
+        "weapon": "Sword",
+        "id": 1
     },
     {
         "name": "Amber",
         "element": "Pyro",
-        "weapon": "Bow"
+        "weapon": "Bow",
+        "id": 2
     },
     {
         "name": "Barbara",
         "element": "Hydro",
-        "weapon": "Catalyst"
+        "weapon": "Catalyst",
+        "id": 3
     },
     {
         "name": "Beidou",
         "element": "Electro",
-        "weapon": "Claymore"
+        "weapon": "Claymore",
+        "id": 4
     },
     {
         "name": "Bennett",
         "element": "Pyro",
-        "weapon": "Sword"
+        "weapon": "Sword",
+        "id": 5
     }
     
 ]
