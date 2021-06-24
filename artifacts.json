@@ -6,7 +6,10 @@
         "ranking": 0,
         "desc": "ATK +18%",
         "tags": [
-            "Any Character"
+            "Main DPS",
+            "Sub/Burst DPS",
+            "Support (Buff)",
+            "Any Element"
         ]
     },
     {
@@ -30,7 +33,10 @@
         "ranking": 0,
         "desc": "Increases Elemental Mastery by 80.",
         "tags": [
-            "Any Character"
+            "Main DPS",
+            "Sub/Burst DPS",
+            "Support (Buff)",
+            "Any Element"
         ]
     },
     {
@@ -53,7 +59,10 @@
         "ranking": 0,
         "desc": "Elemental Burst DMG +20%",
         "tags": [
-            "Any Character"
+            "Main DPS",
+            "Sub/Burst DPS",
+            "Support (Buff)",
+            "Any Element"
         ]
     }, 
     {
@@ -64,8 +73,7 @@
         "desc": "Using an Elemental Burst increases all party members' ATK by 20% for 12s. This effect cannot stack.",
         "tags": [
             "Support (Buff)",
-            "Any Element",
-            "Any Weapon"
+            "Any Element"
         ]
     },
     {
@@ -76,7 +84,6 @@
         "desc": "Character Healing Effectiveness +15%",
         "tags": [
             "Support (Heal)",
-            "Any Weapon",
             "Any Element"
         ]
     },
@@ -88,8 +95,7 @@
         "desc": "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s.",
         "tags": [
             "Support (Heal)",
-            "Any Element",
-            "Any Weapon"
+            "Any Element"
         ]
     },
     {
@@ -100,8 +106,8 @@
         "desc": "Pyro DMG +15%",
         "tags": [
             "Pyro",
-            "Any Build",
-            "Any Weapon"
+            "Main DPS",
+            "Sub/Burst DPS"
         ]
     },
     {
@@ -112,8 +118,7 @@
         "desc": "Increases Overloaded and Burning DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using an Elemental Skill increases the 2-Piece Set Bonus by 50% of its starting value for 10s. Max 3 stacks.",
         "tags": [
             "Pyro",
-            "Main DPS",
-            "Any Weapon"
+            "Main DPS"
         ]
     }
 ]
