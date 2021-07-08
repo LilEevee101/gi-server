@@ -1,4 +1,6 @@
 var express = require("express");
+const {MongoClient} = require('mongodb');
+const uri = "mongodb+srv://genshinapp:ApfeFqtS@genshincluster.nbsqi.mongodb.net/GenshinDB?retryWrites=true&w=majority";
 var fs = require('fs');
 var app = express();
 app.all('/*', function(req, res, next) {
@@ -10,10 +12,20 @@ app.get("/url", (req, res, next) => {
     res.json(["Tony","Lisa","Michael","Ginger","Food"]);
 });
 app.get('/api/characters', (req, res) => {
-    fs.readFile('characters.json', (err, json) => {
-        let obj = JSON.parse(json);
-        res.json(obj);
-    });
+    // fs.readFile('characters.json', (err, json) => {
+    //     let obj = JSON.parse(json);
+    //     res.json(obj);
+    // });
+    MongoClient.connect (uri, (err, client) => {
+        if (err) return console.error(err);
+        console.log('Connected to Database');
+        let db = client.db("genshinartifacts");
+        let characters = db.collection('characters').find().toArray()
+        .then(results => {
+          res.json(results);
+        })
+        .catch(error => console.error(error))
+    })
 });
 app.get('/api/weapons', (req, res) => {
     fs.readFile('weapons.json', (err, json) => {
