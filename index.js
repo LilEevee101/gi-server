@@ -18,7 +18,6 @@ app.get('/api/characters', (req, res) => {
     // });
     MongoClient.connect (uri, (err, client) => {
         if (err) return console.error(err);
-        console.log('Connected to Database');
         let db = client.db("genshinartifacts");
         let characters = db.collection('characters').find().toArray()
         .then(results => {
@@ -46,10 +45,19 @@ app.get('/api/builds', (req, res) => {
     });
 });
 app.get('/api/artifacts', (req, res) => {
-    fs.readFile('artifacts.json', (err, json) => {
-        let obj = JSON.parse(json);
-        res.json(obj);
-    });
+    // fs.readFile('artifacts.json', (err, json) => {
+    //     let obj = JSON.parse(json);
+    //     res.json(obj);
+    // });
+    MongoClient.connect (uri, (err, client) => {
+        if (err) return console.error(err);
+        let db = client.db("genshinartifacts");
+        let artifacts = db.collection('artifacts').find().toArray()
+        .then(results => {
+          res.json(results);
+        })
+        .catch(error => console.error(error))
+    })
 });
 app.listen(3000, () => {
  console.log("Server running on port 3000");
