@@ -19,7 +19,7 @@ app.get('/api/characters', (req, res) => {
     MongoClient.connect (uri, (err, client) => {
         if (err) return console.error(err);
         let db = client.db("genshinartifacts");
-        let characters = db.collection('characters').find().toArray()
+        let characters = db.collection('characters').find().sort( { "name": 1} ).toArray()
         .then(results => {
           res.json(results);
         })
