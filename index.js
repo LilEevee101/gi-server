@@ -1,6 +1,6 @@
 var express = require("express");
 const {MongoClient} = require('mongodb');
-const uri = "mongodb+srv://genshinapp:ApfeFqtS@genshincluster.nbsqi.mongodb.net/GenshinDB?retryWrites=true&w=majority";
+const uri = "mongodb+srv://genshinapp:fSM8KU5A03vzXWeY@genshincluster.nbsqi.mongodb.net/GenshinDB?retryWrites=true&w=majority";
 var fs = require('fs');
 var app = express();
 app.all('/*', function(req, res, next) {
