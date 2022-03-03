@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/LilEevee101/gi-server/issues"
   },
-  "homepage": "https://github.com/LilEevee101/gi-server#readme"
+  "homepage": "https://github.com/LilEevee101/gi-server#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
