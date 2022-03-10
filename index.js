@@ -27,16 +27,34 @@ app.get('/api/characters', (req, res) => {
     })
 });
 app.get('/api/weapons', (req, res) => {
-    fs.readFile('weapons.json', (err, json) => {
-        let obj = JSON.parse(json);
-        res.json(obj);
-    });
+    let weapons = [
+        "Sword",
+        "Claymore",
+        "Catalyst",
+        "Bow",
+        "Polearm"
+    ];
+    res.json (weapons);
+    // fs.readFile('weapons.json', (err, json) => {
+    //     let obj = JSON.parse(json);
+    //     res.json(obj);
+    // });
 });
 app.get('/api/elements', (req, res) => {
-    fs.readFile('elements.json', (err, json) => {
-        let obj = JSON.parse(json);
-        res.json(obj);
-    });
+    let elements = [
+        "Anemo",
+        "Cryo",
+        "Hydro",
+        "Pyro",
+        "Electro",
+        "Geo",
+        "Dendro"
+    ];
+    res.json (elements);
+    // fs.readFile('elements.json', (err, json) => {
+    //     let obj = JSON.parse(json);
+    //     res.json(obj);
+    // });
 });
 app.get('/api/builds', (req, res) => {
     let builds = [
