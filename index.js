@@ -39,10 +39,19 @@ app.get('/api/elements', (req, res) => {
     });
 });
 app.get('/api/builds', (req, res) => {
-    fs.readFile('builds.json', (err, json) => {
-        let obj = JSON.parse(json);
-        res.json(obj);
-    });
+    let builds = [
+        "Main DPS (Elemental)",
+        "Main DPS (Physical)",
+        "Sub/Burst DPS",
+        "Support (Heal)",
+        "Support (Buff)",
+        "Support (Shield)"
+    ];
+    res.json (builds);
+    // fs.readFile('builds.json', (err, json) => {
+    //     let obj = JSON.parse(json);
+    //     res.json(obj);
+    // });
 });
 app.get('/api/artifacts', (req, res) => {
     // fs.readFile('artifacts.json', (err, json) => {
