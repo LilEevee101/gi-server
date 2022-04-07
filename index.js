@@ -1,4 +1,5 @@
 var express = require("express");
+var bodyParser = require('body-parser');
 const {MongoClient} = require('mongodb');
 const uri = "mongodb+srv://vercel:NowbyFR5zToFLgtL@genshincluster.nbsqi.mongodb.net/GenshinDB?retryWrites=true&w=majority";
 var fs = require('fs');
@@ -85,6 +86,12 @@ app.get('/api/artifacts', (req, res) => {
         })
         .catch(error => console.error(error))
     })
+});
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+app.post("/",  urlencodedParser,(req, res) => {
+    console.log('Got body:', req.body);
+    res.sendStatus(200); 
+    //res.send('welcome, ' + req.body.contactname)
 });
 app.listen(3000, () => {
  console.log("Server running on port 3000");
