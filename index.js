@@ -1,7 +1,10 @@
 var express = require("express");
 var bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
 const {MongoClient} = require('mongodb');
-const uri = "mongodb+srv://vercel:NowbyFR5zToFLgtL@genshincluster.nbsqi.mongodb.net/GenshinDB?retryWrites=true&w=majority";
+const dotenv = require('dotenv');
+dotenv.config();
+const uri = process.env.MONGO;
 var fs = require('fs');
 var app = express();
 app.all('/*', function(req, res, next) {
@@ -88,11 +91,34 @@ app.get('/api/artifacts', (req, res) => {
     })
 });
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
+const transporter = nodemailer.createTransport({
+    port: 465,               // true for 465, false for other ports
+    host: "smtp.gmail.com",
+       auth: {
+            user: 'leichii.art@gmail.com',
+            pass: process.env.SMTP,
+         },
+    secure: true,
+});
 app.post("/",  urlencodedParser,(req, res) => {
     console.log('Got body:', req.body);
     res.sendStatus(200); 
     //res.send('welcome, ' + req.body.contactname)
-});
+    const mailData = {
+        from: 'leichii.art@gmail.com',  // sender address
+        to: 'ninja.calla@live.com',   // list of receivers
+        subject: 'Sending Email using Node.js',
+        text: 'That was easy!',
+        html: '<b>Hey there! </b> <br> This is our first message sent with Nodemailer<br/>',
+    };
+    transporter.sendMail(mailData, (error, info) =>  {
+        if (error) {
+            return console.log(error);
+        }
+        res.status(200).send({message:"mail send", message_id:info.messageId});
+    });
+}); 
 app.listen(3000, () => {
  console.log("Server running on port 3000");
+ console.log (process.env);
 });
