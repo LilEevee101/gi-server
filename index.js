@@ -92,21 +92,25 @@ app.get('/api/artifacts', (req, res) => {
 });
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 const transporter = nodemailer.createTransport({
-    port: 465,               // true for 465, false for other ports
-    host: "smtp.gmail.com",
-       auth: {
-            user: 'leichii.art@gmail.com',
-            pass: process.env.SMTP,
-         },
-    secure: true,
+    port: 587,               // true for 465, false for other ports
+    host: "smtp-relay.sendinblue.com",
+    secureConnection: false,
+    auth: {
+        user: process.env.FROM,
+        pass: process.env.SMTP,
+    },
+        tls: {
+        ciphers:'SSLv3'
+    }
+    // secure: true,
 });
 app.post("/",  urlencodedParser,(req, res) => {
     console.log('Got body:', req.body);
     res.sendStatus(200); 
     //res.send('welcome, ' + req.body.contactname)
     const mailData = {
-        from: 'leichii.art@gmail.com',  // sender address
-        to: 'ninja.calla@live.com',   // list of receivers
+        from: process.env.FROM,  // sender address
+        to: process.env.TO,   // list of receivers
         subject: 'Sending Email using Node.js',
         text: 'That was easy!',
         html: '<b>Hey there! </b> <br> This is our first message sent with Nodemailer<br/>',
