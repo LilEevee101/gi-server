@@ -104,9 +104,9 @@ const transporter = nodemailer.createTransport({
     }
     // secure: true,
 });
-app.post("/",  urlencodedParser,(req, res) => {
+app.post("/",  urlencodedParser, async (req, res) => {
     console.log('Got body:', req.body);
-    res.sendStatus(200); 
+
     //res.send('welcome, ' + req.body.contactname)
     const mailData = {
         from: process.env.FROM,  // sender address
@@ -115,12 +115,17 @@ app.post("/",  urlencodedParser,(req, res) => {
         text: 'That was easy!',
         html: '<b>Hey there! </b> <br> This is our first message sent with Nodemailer<br/>',
     };
-    transporter.sendMail(mailData, (error, info) =>  {
-        if (error) {
-            return console.log(error);
-        }
-        res.status(200).send({message:"mail send", message_id:info.messageId});
+    await new Promise((resolve, reject) => {
+        console.log ("promise started");
+        transporter.sendMail(mailData, (error, info) =>  {
+            if (error) {
+                return console.log(error);
+            }
+            res.status(200).send({message:"mail send", message_id:info.messageId});
+        });
     });
+    
+    res.sendStatus(200); 
 }); 
 app.listen(3000, () => {
  console.log("Server running on port 3000");
