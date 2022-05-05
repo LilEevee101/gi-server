@@ -106,14 +106,13 @@ const transporter = nodemailer.createTransport({
 });
 app.post("/",  urlencodedParser, async (req, res) => {
     console.log('Got body:', req.body);
-
+    const {contactname, contactemail, contactmessage} = req.body;
     //res.send('welcome, ' + req.body.contactname)
     const mailData = {
         from: process.env.FROM,  // sender address
         to: process.env.TO,   // list of receivers
-        subject: 'Sending Email using Node.js',
-        text: 'That was easy!',
-        html: '<b>Hey there! </b> <br> This is our first message sent with Nodemailer<br/>',
+        subject: 'Contact Form Submission',
+        html: `<p><a href="mailto: ${contactemail}">${contactname}</a> has sent a message </p> <p>${contactmessage}</p>`,
     };
     await new Promise((resolve, reject) => {
         console.log ("promise started");
